@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="color-picker">
+        <div class="colorlistbox">
+            <div class="colorlistboxdetails">
+                <h1>Welcome To Color Randamizer</h1>
+                <h2>Choose Colors which suits you</h2>
+            </div>
+            <div class="colorlist"></div>
+        </div>
+        <div class="color-picker-box">
+            <div class="color-form">
+                <form id="colorform" name="colorform" onsubmit="return validateFormOnSubmit(this)" onKeyPress="if (event.which == 13) return false;" action="" method="GET">
+                    <input class="input-item" type="text" name="num" id="num"/>
+                    <div id="num-error" class="error"></div>
+                    <div class="button-grp">
+                        <button type="submit">OK</button>
+                        <button class="clear">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="selectedColor"></div>
+            <div>
+                <h1 class="color-hex"></h1>
+            </div>
+        </div>
+    </div>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
