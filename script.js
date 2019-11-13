@@ -1,9 +1,8 @@
-var colors = ["#000","#808000","#CD5C5C","#F08080","#FA8072","#E9967A","#FFA07A",];
+var colors = ["#000","#808000","#CD5C5C","#F08080","#FA8072","#E9967A","#FFA07A","#B6C115","#15BCC1","#151DC1","#F5102C","#33F510"];
 
 $( "#colorform" ).submit(function( event ){
     document.querySelector(".colorlistboxdetails").style.display="none";
-    var range=7;
-    var work=false;
+    var range=colors.length;
     var num=document.getElementById("num").value;
     event.preventDefault();
     var err=validateFormOnSubmit(colorform);
@@ -63,7 +62,7 @@ function validateNumber(number){
     var stripped = number.value.replace(/[\(\)\.\-\ ]/g, '');
       if (number.value == "") {
           error = error + 1;
-          document.getElementById('num-error').innerHTML = "Min is 1";
+          document.getElementById('num-error').innerHTML = "Input is empty";
           number.style.outline = "2px solid #ff9f9f";
           setTimeout(function(){
             document.getElementById('num-error').innerHTML = "";
@@ -79,10 +78,10 @@ function validateNumber(number){
             number.style.outline = "none";
           },2000);
       }
-      if(number.value>7)
+      if(number.value>colors.length)
       {
         error = error + 1;
-        document.getElementById('num-error').innerHTML = "Max is 7";
+        document.getElementById('num-error').innerHTML = "Max is "+colors.length;
         number.style.outline = "2px solid #ff9f9f";
         setTimeout(function(){
             document.getElementById('num-error').innerHTML = "";
@@ -93,11 +92,6 @@ function validateNumber(number){
           error=0;
       }
       return error;
-}
-function randomArray(length, max) {
-    return Array.apply(null, Array(length)).map(function() {
-        return Math.round(Math.random() * max);
-    });
 }
 
 
